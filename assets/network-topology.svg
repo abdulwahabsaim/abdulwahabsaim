@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 140" width="100%" height="140" style="background:#0d1117; border-radius: 8px;">
+  <defs>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Grid Mesh Lines -->
+  <line x1="100" y1="40" x2="340" y2="70" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="100" y1="100" x2="340" y2="70" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="340" y1="70" x2="580" y2="40" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="340" y1="70" x2="580" y2="100" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="100" y1="40" x2="100" y2="100" stroke="#00D2FF" stroke-width="1" stroke-dasharray="3,3" opacity="0.2"/>
+  <line x1="580" y1="40" x2="580" y2="100" stroke="#00D2FF" stroke-width="1" stroke-dasharray="3,3" opacity="0.2"/>
+  <line x1="340" y1="70" x2="430" y2="15" stroke="#00FF88" stroke-width="1" opacity="0.2"/>
+  <line x1="340" y1="70" x2="430" y2="125" stroke="#00FF88" stroke-width="1" opacity="0.2"/>
+  <line x1="580" y1="40" x2="750" y2="70" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="580" y1="100" x2="750" y2="70" stroke="#00D2FF" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Core Router Pulse Waves -->
+  <circle cx="340" cy="70" r="22" fill="#00D2FF" opacity="0.05">
+    <animate attributeName="r" values="16;28;16" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.08;0.01;0.08" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="340" cy="70" r="14" fill="#00D2FF" opacity="0.1">
+    <animate attributeName="r" values="12;20;12" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Core Router Node -->
+  <circle cx="340" cy="70" r="9" fill="#0d1117" stroke="#00D2FF" stroke-width="2.5" filter="url(#glow)"/>
+  <circle cx="340" cy="70" r="4" fill="#00FF88"/>
+  <text x="340" y="96" fill="#00D2FF" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">CORE-RTR</text>
+
+  <!-- Distribution Nodes -->
+  <circle cx="100" cy="40" r="7" fill="#0d1117" stroke="#00D2FF" stroke-width="2"/>
+  <circle cx="100" cy="40" r="3" fill="#00D2FF"/>
+  <text x="100" y="26" fill="#8b949e" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">DIST-01</text>
+
+  <circle cx="100" cy="100" r="7" fill="#0d1117" stroke="#00D2FF" stroke-width="2"/>
+  <circle cx="100" cy="100" r="3" fill="#00D2FF"/>
+  <text x="100" y="118" fill="#8b949e" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">DIST-02</text>
+
+  <circle cx="580" cy="40" r="7" fill="#0d1117" stroke="#00D2FF" stroke-width="2"/>
+  <circle cx="580" cy="40" r="3" fill="#00D2FF"/>
+  <text x="580" y="26" fill="#8b949e" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">SEC-GW1</text>
+
+  <circle cx="580" cy="100" r="7" fill="#0d1117" stroke="#00D2FF" stroke-width="2"/>
+  <circle cx="580" cy="100" r="3" fill="#00D2FF"/>
+  <text x="580" y="118" fill="#8b949e" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">SEC-GW2</text>
+
+  <!-- Satellite Service Nodes -->
+  <circle cx="430" cy="15" r="5" fill="#0d1117" stroke="#00FF88" stroke-width="1.5"/>
+  <circle cx="430" cy="15" r="2" fill="#00FF88"/>
+  <text x="430" y="9" fill="#00FF88" font-family="'Courier New', monospace" font-size="7" text-anchor="middle">DHCP/DNS</text>
+
+  <circle cx="430" cy="125" r="5" fill="#0d1117" stroke="#00FF88" stroke-width="1.5"/>
+  <circle cx="430" cy="125" r="2" fill="#00FF88"/>
+  <text x="430" y="137" fill="#00FF88" font-family="'Courier New', monospace" font-size="7" text-anchor="middle">AAA/RADIUS</text>
+
+  <circle cx="750" cy="70" r="8" fill="#0d1117" stroke="#00D2FF" stroke-width="2"/>
+  <circle cx="750" cy="70" r="3.5" fill="#00D2FF"/>
+  <text x="750" y="92" fill="#00D2FF" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">EDGE-WAN</text>
+
+  <!-- Animated Flying Data Packets (Green / Cyan) -->
+  <circle r="3" fill="#00FF88" filter="url(#glow)">
+    <animateMotion dur="2.4s" repeatCount="indefinite" path="M100,40 L340,70"/>
+  </circle>
+  <circle r="3" fill="#00D2FF" filter="url(#glow)">
+    <animateMotion dur="2.1s" repeatCount="indefinite" path="M100,100 L340,70" begin="0.8s"/>
+  </circle>
+  <circle r="3" fill="#00FF88" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M340,70 L580,40" begin="0.3s"/>
+  </circle>
+  <circle r="3" fill="#00D2FF" filter="url(#glow)">
+    <animateMotion dur="2.2s" repeatCount="indefinite" path="M340,70 L580,100" begin="0.9s"/>
+  </circle>
+  <circle r="2.5" fill="#00FF88">
+    <animateMotion dur="1.5s" repeatCount="indefinite" path="M340,70 L430,15" begin="0.2s"/>
+  </circle>
+  <circle r="2.5" fill="#00FF88">
+    <animateMotion dur="1.7s" repeatCount="indefinite" path="M430,125 L340,70" begin="0.5s"/>
+  </circle>
+  <circle r="3" fill="#00D2FF" filter="url(#glow)">
+    <animateMotion dur="1.8s" repeatCount="indefinite" path="M580,40 L750,70" begin="0.6s"/>
+  </circle>
+  <circle r="3" fill="#00FF88" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M750,70 L580,100" begin="1.2s"/>
+  </circle>
+</svg>
