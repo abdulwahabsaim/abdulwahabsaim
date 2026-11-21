@@ -33,6 +33,19 @@ I build enterprise topologies in Packet Tracer, GNS3 and EVE-NG, configure every
   <a href="https://abdulwahabsaim.github.io/#terminal"><img src="assets/terminal.svg" width="100%" alt="Terminal: whoami prints Abdul Wahab Saim, junior network engineer, CCNA 200-301. ls labs lists routing, security, services, firewall and campus. cat status.txt: available full-time, based in Goes, open to relocating."></a>
 </p>
 
+<p align="center">
+  <a href="https://abdulwahabsaim.github.io/?run=help#terminal"><img src="https://img.shields.io/badge/%24-help-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run help in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=about#terminal"><img src="https://img.shields.io/badge/%24-about-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run about in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=skills#terminal"><img src="https://img.shields.io/badge/%24-skills-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run skills in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=ls%20labs#terminal"><img src="https://img.shields.io/badge/%24-ls_labs-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run ls labs in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=certs#terminal"><img src="https://img.shields.io/badge/%24-certs-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run certs in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=experience#terminal"><img src="https://img.shields.io/badge/%24-experience-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run experience in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=contact#terminal"><img src="https://img.shields.io/badge/%24-contact-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run contact in the live terminal"></a>
+  <a href="https://abdulwahabsaim.github.io/?run=sudo%20hire#terminal"><img src="https://img.shields.io/badge/%24-sudo_hire-2b2b30?style=flat-square&labelColor=ff6a1f" alt="Run sudo hire in the live terminal"></a>
+  <br>
+  <sub>Try it live: each command opens the real terminal on my portfolio and runs it there.</sub>
+</p>
+
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg"><img src="assets/divider-light.svg" width="100%" alt=""></picture></p>
 
 ## Labs
