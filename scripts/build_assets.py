@@ -351,10 +351,8 @@ def wave_footer(theme):
     dots = "".join(f'<circle cx="{x}" cy="{y}" r="1.1" fill="#ffffff" fill-opacity=".06"/>' for x in range(40, W, 24) for y in range(70, H, 24))
     body = (defs + '<g clip-path="url(#fcard)">'
             f'<rect width="{W}" height="{H}" fill="url(#fbg)"/>' + dots
-            + f'<g clip-path="url(#below)"><rect class="pool" y="{LY}" width="{W}" height="{H}" fill="url(#fpool)"/></g>'
-            f'<rect class="bar" x="{cx - 280}" y="{LY - 1.5}" width="560" height="3" rx="1.5" fill="url(#fbar)"/>'
-            f'<text x="{cx}" y="{LY + 84}" text-anchor="middle" class="h">Hiring for a network or NOC role? <tspan class="a">Let\'s talk.</tspan></text>'
-            f'<text x="{cx}" y="{LY + 134}" text-anchor="middle" class="m">abdulwahabsaim58.nl@gmail.com</text>'
+            + f'<text x="{cx}" y="{LY + 60}" text-anchor="middle" class="h">Hiring for a network or NOC role? <tspan class="a">Let\'s talk.</tspan></text>'
+            f'<text x="{cx}" y="{LY + 110}" text-anchor="middle" class="m">abdulwahabsaim58.nl@gmail.com</text>'
             # Waves on top: orange band, then the page colour cutting in from above (header mirrored).
             f'<g transform="translate(0 {H}) scale(1 -1)">'
             f'<path class="w1" d="{wave_path(W, H - 58, 14, 0.6)}" fill="{ACCENT}" fill-opacity=".55"/>'
