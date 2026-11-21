@@ -142,7 +142,7 @@ Orange marks the skills I use most.
 <br>
 
 <p align="center">
-  <a href="mailto:abdulwahabsaim58.nl@gmail.com"><img src="assets/footer.svg" width="100%" alt="Hiring for a network or NOC role? Let's talk. abdulwahabsaim58.nl@gmail.com"></a>
+  <a href="mailto:abdulwahabsaim58.nl@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg"><img src="assets/footer-light.svg" width="100%" alt="Hiring for a network or NOC role? Let's talk. abdulwahabsaim58.nl@gmail.com"></picture></a>
 </p>
 
 <p align="center">Based in Goes, Zeeland and open to relocating within the Netherlands.</p>

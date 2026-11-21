@@ -325,13 +325,51 @@ def tiles():
     return svg(W, S, "Tools: " + ", ".join(t[1] for t in TILES), "".join(out), "")
 
 
+def wave_footer(theme):
+    """Mirror of the wave header: page-coloured wave on top, charcoal banner with a lamp light below."""
+    c = THEMES[theme]
+    W, H, LY = 1200, 300, 118
+    cx = W / 2
+    css = f"""
+      .w1{{animation:drift 14s linear infinite}} .w2{{animation:drift 9s linear infinite reverse}}
+      @keyframes drift{{from{{transform:translateX(0)}}to{{transform:translateX(-{W}px)}}}}
+      .pool{{transform-origin:{cx}px {LY}px;animation:open 1.3s cubic-bezier(.45,0,.55,1) .25s backwards}}
+      .bar{{transform-origin:{cx}px {LY}px;animation:flick 1.3s linear .25s backwards}}
+      @keyframes open{{from{{transform:scaleX(.4);opacity:.25}}}}
+      @keyframes flick{{0%{{transform:scaleX(.4);opacity:.3}}8%{{opacity:1}}13%{{opacity:.35}}22%{{opacity:1}}28%{{opacity:.6}}38%{{opacity:1}}}}
+      .h{{font:800 44px {SANS};letter-spacing:-1.5px;fill:#ffffff}} .a{{fill:{ACCENT}}}
+      .m{{font:400 17px {MONO};fill:#c4c4cc}}
+      @media (prefers-reduced-motion:reduce){{.w1,.w2,.pool,.bar{{animation:none}}}}
+    """
+    defs = (f'<defs><linearGradient id="fbg" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#141416"/>'
+            f'<stop offset=".6" stop-color="#1b1613"/><stop offset="1" stop-color="#3a1a0a"/></linearGradient>'
+            f'<radialGradient id="fpool" cx="{cx}" cy="{LY}" r="440" gradientUnits="userSpaceOnUse" gradientTransform="translate({cx} {LY}) scale(1 .5) translate({-cx} {-LY})">'
+            f'<stop offset="0" stop-color="{ACCENT}" stop-opacity=".55"/><stop offset=".4" stop-color="{ACCENT}" stop-opacity=".18"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></radialGradient>'
+            f'<linearGradient id="fbar" x1="0" x2="1"><stop offset="0" stop-color="#ffb38a" stop-opacity="0"/><stop offset=".5" stop-color="#fff1e8"/><stop offset="1" stop-color="#ffb38a" stop-opacity="0"/></linearGradient>'
+            f'<clipPath id="fcard"><path d="M0 0 H{W} V{H - 22} A22 22 0 0 1 {W - 22} {H} H22 A22 22 0 0 1 0 {H - 22} Z"/></clipPath>'
+            f'<clipPath id="below"><rect y="{LY}" width="{W}" height="{H}"/></clipPath></defs>')
+    dots = "".join(f'<circle cx="{x}" cy="{y}" r="1.1" fill="#ffffff" fill-opacity=".06"/>' for x in range(40, W, 24) for y in range(70, H, 24))
+    body = (defs + '<g clip-path="url(#fcard)">'
+            f'<rect width="{W}" height="{H}" fill="url(#fbg)"/>' + dots
+            + f'<g clip-path="url(#below)"><rect class="pool" y="{LY}" width="{W}" height="{H}" fill="url(#fpool)"/></g>'
+            f'<rect class="bar" x="{cx - 280}" y="{LY - 1.5}" width="560" height="3" rx="1.5" fill="url(#fbar)"/>'
+            f'<text x="{cx}" y="{LY + 84}" text-anchor="middle" class="h">Hiring for a network or NOC role? <tspan class="a">Let\'s talk.</tspan></text>'
+            f'<text x="{cx}" y="{LY + 134}" text-anchor="middle" class="m">abdulwahabsaim58.nl@gmail.com</text>'
+            # Waves on top: orange band, then the page colour cutting in from above (header mirrored).
+            f'<g transform="translate(0 {H}) scale(1 -1)">'
+            f'<path class="w1" d="{wave_path(W, H - 58, 14, 0.6)}" fill="{ACCENT}" fill-opacity=".55"/>'
+            f'<path class="w2" d="{wave_path(W, H - 44, 12, 2.2, 1)}" fill="{c["bg"]}"/></g>'
+            '</g>')
+    return svg(W, H, "Hiring for a network or NOC role? Let's talk. abdulwahabsaim58.nl@gmail.com", body, css)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "terminal.svg").write_text(terminal())
-    (OUT / "footer.svg").write_text(footer())
     (OUT / "tools.svg").write_text(tiles())
     for theme in THEMES:
         (OUT / f"header-{theme}.svg").write_text(header(theme))
+        (OUT / f"footer-{theme}.svg").write_text(wave_footer(theme))
         (OUT / f"divider-{theme}.svg").write_text(divider(theme))
         for slug, *rest in CERTS:
             (OUT / f"cert-{slug}-{theme}.svg").write_text(cert_card(theme, slug, *rest))
