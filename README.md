@@ -75,12 +75,14 @@ Every lab also has its own page with a redrawn topology on the [portfolio](https
 
 ## Credentials
 
-| Credential | Issuer | Date | |
-| :--- | :--- | :--- | :--- |
-| **Cisco Certified Network Associate** (CCNA 200-301) | Cisco | Feb 2026 | [Verify](https://cp.certmetrics.com/cisco/en/public/verify/credential/852d6536dadd4375ac8964bdbd599b94) |
-| **Administer Active Directory Domain Services** | Microsoft Applied Skills | Nov 2026 | [Verify](https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/79c096475bfb39a0) |
-| **Get started with identities and access using Microsoft Entra** | Microsoft Applied Skills | Nov 2026 | [Verify](https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/f6ba56b7933690ed) |
-| **Jira Service Management Fundamentals with AI** | Atlassian Credentialed | Nov 2026 | [Verify](https://cp.certmetrics.com/atlassian/en/public/verify/credential/eb1ebbd08f3b4f5797091b9240db1176) |
+<p align="center">
+  <a href="https://cp.certmetrics.com/cisco/en/public/verify/credential/852d6536dadd4375ac8964bdbd599b94"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cert-ccna-dark.svg"><img src="assets/cert-ccna-light.svg" width="49%" alt="Cisco Certified Network Associate, CCNA 200-301: verify"></picture></a>
+  <a href="https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/79c096475bfb39a0"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cert-ms-adds-dark.svg"><img src="assets/cert-ms-adds-light.svg" width="49%" alt="Microsoft Applied Skills, Administer Active Directory Domain Services: verify"></picture></a>
+  <a href="https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/f6ba56b7933690ed"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cert-ms-entra-dark.svg"><img src="assets/cert-ms-entra-light.svg" width="49%" alt="Microsoft Applied Skills, Get started with identities and access using Microsoft Entra: verify"></picture></a>
+  <a href="https://cp.certmetrics.com/atlassian/en/public/verify/credential/eb1ebbd08f3b4f5797091b9240db1176"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/cert-jsm-dark.svg"><img src="assets/cert-jsm-light.svg" width="49%" alt="Atlassian Credentialed, Jira Service Management Fundamentals with AI: verify"></picture></a>
+</p>
+
+<p align="center"><sub>Each card opens the official verification page.</sub></p>
 
 Training at Corvit: Red Hat System Administration (RHCSA) coursework completed. Taking Cisco CCNP and Cisco ASA/FTD firewall classes now.
 

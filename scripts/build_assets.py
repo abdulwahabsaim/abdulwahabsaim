@@ -7,6 +7,7 @@ Builds the self-hosted SVGs used by README.md (light and dark versions).
 Edit the DATA section when a lab count, status or line changes, then rerun.
 No third-party services: every image in the README header, cards, dividers and footer comes from here.
 """
+import base64
 import math
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -36,6 +37,16 @@ CARDS = [
     ("firewall", "cisco-asa-firewall-labs", "Cisco ASA firewalls", "3", "labs, in progress",
      "Security levels, ACLs and object groups, NAT, DMZ", False),
 ]
+
+
+CERTS = [
+    # slug, image, issuer, title lines, code, date
+    ("ccna", "ccna.webp", "Cisco", ["Cisco Certified", "Network Associate"], "CCNA 200-301", "Feb 2026"),
+    ("ms-adds", "ms-adds.webp", "Microsoft Applied Skills", ["Administer Active", "Directory Domain", "Services"], "Applied Skills", "Nov 2026"),
+    ("ms-entra", "ms-entra.webp", "Microsoft Applied Skills", ["Identities and access", "with Microsoft Entra"], "Applied Skills", "Nov 2026"),
+    ("jsm", "atlassian-jsm.webp", "Atlassian Credentialed", ["Jira Service Management", "Fundamentals with AI"], "Credential", "Nov 2026"),
+]
+CERT_DIR = Path(__file__).resolve().parent / "certs"
 
 # ---------------------------------------------------------------- THEME
 ACCENT = "#ff6a1f"
@@ -208,12 +219,41 @@ def footer():
     return svg(W, H, "Hiring for a network or NOC role? Let's talk. abdulwahabsaim58.nl@gmail.com", body, css)
 
 
+# ---------------------------------------------------------------- CREDENTIAL CARDS
+def cert_card(theme, slug, image, issuer, lines, code, date):
+    c = THEMES[theme]
+    W, H = 490, 230
+    b64 = base64.b64encode((CERT_DIR / image).read_bytes()).decode()
+    # Certificate thumbnail on the left, tilted slightly like a paper on a desk.
+    tw, th = 170, 128
+    css = f"""
+      .iss{{font:500 13px {MONO};fill:{c['text3']}}}
+      .t{{font:700 21px {SANS};letter-spacing:-0.4px;fill:{c['text']}}}
+      .meta{{font:400 14px {SANS};fill:{c['text2']}}}
+      .v{{font:600 14px {SANS};fill:{ACCENT}}}
+      .paper{{filter:drop-shadow(0 8px 14px rgba(0,0,0,.22))}}
+    """
+    lh = 27 if len(lines) < 3 else 24
+    title = "".join(f'<text x="226" y="{82 + i * lh}" class="t">{escape(l)}</text>' for i, l in enumerate(lines))
+    body = (f'<rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="16" fill="{c["card"]}" stroke="{c["line"]}" stroke-width="1.5"/>'
+            f'<rect x="12" y="12" width="190" height="{H - 24}" rx="12" fill="{ACCENT}" fill-opacity=".08"/>'
+            f'<g class="paper" transform="rotate(-3 107 115)"><rect x="{107 - tw / 2 - 4}" y="{115 - th / 2 - 4}" width="{tw + 8}" height="{th + 8}" rx="4" fill="#ffffff"/>'
+            f'<image href="data:image/webp;base64,{b64}" x="{107 - tw / 2}" y="{115 - th / 2}" width="{tw}" height="{th}" preserveAspectRatio="xMidYMid meet"/></g>'
+            f'<text x="226" y="46" class="iss">{escape(issuer)}</text>{title}'
+            f'<text x="226" y="{82 + len(lines) * lh + (10 if len(lines) < 3 else 2)}" class="meta">{escape(code)}  ·  {escape(date)}</text>'
+            f'<rect x="226" y="{H - 52}" width="150" height="32" rx="16" fill="{ACCENT}" fill-opacity=".12" stroke="{ACCENT}" stroke-opacity=".5"/>'
+            f'<text x="244" y="{H - 31}" class="v">Verify credential  &#8599;</text>')
+    return svg(W, H, f"{' '.join(lines)}, {issuer}, {date}. Verify credential.", body, css)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "terminal.svg").write_text(terminal())
     (OUT / "footer.svg").write_text(footer())
     for theme in THEMES:
         (OUT / f"divider-{theme}.svg").write_text(divider(theme))
+        for slug, *rest in CERTS:
+            (OUT / f"cert-{slug}-{theme}.svg").write_text(cert_card(theme, slug, *rest))
         for slug, *rest in CARDS:
             (OUT / f"card-{slug}-{theme}.svg").write_text(card(theme, slug, *rest))
     print("built", sorted(p.name for p in OUT.glob("*.svg")))
