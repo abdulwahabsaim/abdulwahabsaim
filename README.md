@@ -1,166 +1,78 @@
-<div align="center">
-
-<!-- Animated Header Wave Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,24,35,45&height=180&section=header&text=Abdul%20Wahab%20Saim&fontSize=42&fontAlignY=36&fontColor=ffffff&desc=CCNA%20Certified%20%E2%80%A2%20B.Sc.%20Computer%20Science&descAlignY=64&descSize=17&descColor=00D2FF" width="100%"/>
-
-<!-- Dynamic Animated Typing Terminal -->
-<a href="https://github.com/abdulwahabsaim">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=2200&pause=1000&color=00D2FF&center=true&vCenter=true&width=780&lines=%3E_SYS_INIT%3A+Abdul+Wahab+Saim+%5BOnline%5D;%3E_CERT%3A+Cisco+Certified+Network+Associate+(CCNA+200-301);%3E_FLAGSHIP%3A+15-Node+Enterprise+Campus+Capstone+%5B100%25+Verified%5D;%3E_TARGET%3A+Junior+Network+Engineer+%2F+NOC+Specialist;%3E_STACK%3A+Enterprise+Routing+%E2%80%A2+L2+Hardening+%E2%80%A2+Wireless+%E2%80%A2+Linux" alt="Typing SVG" />
+<a href="https://abdulwahabsaim.github.io">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+    <img src="assets/header-light.svg" width="100%" alt="Abdul Wahab Saim, junior network engineer, ready to join your team. CCNA 200-301, Goes, Netherlands, full-time, available now.">
+  </picture>
 </a>
-<br/>
-<!-- Live Animated Dual-Theme Topology -->
-<img src="assets/network-topology.svg" width="100%" alt="Network Infrastructure Topology" />
-<br/>
-<br/>
-<br/>
 
-<!-- Real-Time Telemetry Badges -->
-<p align="center">
-  <a href="https://abdulwahabsaim.github.io/#credentials" title="Verify CCNA Credential"><img src="https://img.shields.io/badge/CCNA-200--301-00599C?style=for-the-badge&logo=cisco&logoColor=white" height="28"/></a>
-  <img src="https://img.shields.io/badge/DEGREE-B.SC._CS_(IN_PROGRESS)-3776AB?style=for-the-badge&logo=python&logoColor=white" height="28"/>
-  <img src="https://img.shields.io/badge/ROLE-JUNIOR_NETWORK_/_NOC-orange?style=for-the-badge&logo=target&logoColor=white" height="28"/>
-  <img src="https://img.shields.io/badge/OS-UBUNTU_LINUX-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height="28"/>
+<p>
+  <a href="https://abdulwahabsaim.github.io"><img src="https://img.shields.io/badge/Portfolio-abdulwahabsaim.github.io-111113?style=flat-square&logo=googlechrome&logoColor=ff6a1f" alt="Portfolio"></a>
+  <a href="https://www.linkedin.com/in/abdulwahabsaim/"><img src="https://img.shields.io/badge/LinkedIn-abdulwahabsaim-111113?style=flat-square&logo=linkedin&logoColor=ff6a1f" alt="LinkedIn"></a>
+  <a href="mailto:abdulwahabsaim58.nl@gmail.com"><img src="https://img.shields.io/badge/Email-abdulwahabsaim58.nl%40gmail.com-111113?style=flat-square&logo=gmail&logoColor=ff6a1f" alt="Email"></a>
+  <a href="https://abdulwahabsaim.github.io/Abdul-Wahab-Saim-CV.pdf"><img src="https://img.shields.io/badge/CV-Download_PDF-ff6a1f?style=flat-square&logo=adobeacrobatreader&logoColor=111113" alt="Download CV"></a>
 </p>
 
-</div>
+CCNA-certified Junior Network Engineer with 3.5 years of Computer Science foundations, available full-time immediately.
 
+I build enterprise topologies in Packet Tracer, GNS3 and EVE-NG, configure every device from the Cisco IOS CLI and keep the configs and runbooks here in Git. Looking for junior network, NOC and infrastructure roles across the Netherlands. Shifts and on-call are fine.
 
+## Flagship: enterprise campus network
 
-## 📌 About Me & Value Proposition
+<a href="https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/campus-topology-dark.svg">
+    <img src="assets/campus-topology-light.svg" width="100%" alt="Topology of the 15-device enterprise campus: R1 with two ISP links, two core switches, two office blocks with distribution and access switches, WLC, access points, IP phones, PCs and a server">
+  </picture>
+</a>
 
-* 🎓 **Academic Profile:** Final-year **Bachelor of Science in Computer Science** student specializing in enterprise networking, routing protocols, and systems administration.
-* 📜 **Industry Certification:** **Cisco Certified Network Associate (CCNA 200-301)**.
-* 🏆 **Flagship Capstone Project:** Architected, configured, and verified a 15-device multi-tier hierarchical campus network ([`cisco-enterprise-campus-mega-lab`](https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab), based on Jeremy's IT Lab CCNA Mega Lab), featuring a wire-speed Layer 3 Core, Active-Active HSRPv2, deterministic Rapid-PVST+ root alignment, OSPFv2 Area 0, Layer 2 Security (DAI/DHCP Snooping/Port-Security), Cisco 3504 WLC mobility, and IPv6 dual-stack.
-* 🎯 **Career Goal:** Seeking **Junior Network Engineer**, **NOC Engineer (Level 1/2)**, or **Network Operations Specialist** roles at enterprise NOCs, MSPs, ISPs, or datacenters.
-* 🛠️ **Engineering Mindset:** Bridging **Computer Science scripting** (Python, Scapy, Linux) with **production network infrastructure** (OSPF, EIGRP, HSRP, 802.1Q, Port Security, Wireless, NAT/PAT).
+Two office blocks, a routed Layer 3 core and a dual-ISP edge across 15 Cisco devices.
 
-<img src="assets/network-divider.svg" width="100%" alt="Network Divider" />
+- HSRPv2 active gateways aligned with Rapid-PVST+ root bridges
+- Multi-area OSPFv2 with floating static failover to a second ISP
+- DHCP Snooping, DAI and Port Security at the access layer, plus Cisco 3504 WLC wireless
 
-## 🗂️ Featured Network Engineering Repositories
+The scenario is the CCNA Mega Lab by Jeremy's IT Lab. Every configuration, verification test, addressing plan and slide is my own work. [Open the repository](https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab)
 
-<div align="center">
+## Lab repositories
 
-| Node / Repository | Focus Domains | Core Protocols & Architecture | Verification Highlights | Live Link |
-| :--- | :--- | :--- | :--- | :---: |
-| <img src="https://img.shields.io/badge/FLAGSHIP-CAPSTONE-FF5722?style=for-the-badge&logo=cisco&logoColor=white"/> | **Enterprise Campus Capstone (15 Nodes)** | **Hierarchical 3-Tier Campus • Wire-Speed L3 Core • Active-Active HSRPv2 • OSPFv2 Area 0 • Dual-ISP Floating WAN • DAI & DHCP Snooping • Cisco 3504 WLC • IPv6 Dual-Stack** | • 100% Packet Tracer Assessment Score<br/>• 0% inter-switch trunk hairpinning<br/>• 10-Slide High-Res Architecture Deck | [**`cisco-enterprise-campus-mega-lab` →**](https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab) |
-| <img src="https://img.shields.io/badge/ROUTING-AS65001-00599C?style=for-the-badge&logo=cisco&logoColor=white"/> | **Enterprise Routing & High Availability (13 Labs)** | **EIGRP AS 7 • Multi-Area OSPF • HSRP v2 • 5-Node WAN Mesh (ECMP) • Multi-Hop Static • Floating Static • QoS • GRE** | • ABR Type-3 Inter-Area LSAs<br/>• Dual-segment active/standby failover<br/>• Symmetrical multi-path transit RIB | [**`enterprise-routing-labs` →**](https://github.com/abdulwahabsaim/enterprise-routing-labs) |
-| <img src="https://img.shields.io/badge/SECURITY-L2_CAMPUS-00FF88?style=for-the-badge&logo=cisco&logoColor=black"/> | **Switching Infrastructure & Campus Hardening (13 Labs)** | **STP Root Guard • Loop Guard • Port Security • Extended ACLs • 802.1Q VTP • EtherChannel • DAI • Voice VLAN** | • Rogue Root Bridge hijack defense (`ROOT_Inc`)<br/>• Dynamic, Static & Sticky MAC limits<br/>• Unidirectional link loop mitigation | [**`layer2-security-labs` →**](https://github.com/abdulwahabsaim/layer2-security-labs) |
-| <img src="https://img.shields.io/badge/SERVICES-APPL_CORE-orange?style=for-the-badge&logo=cisco&logoColor=white"/> | **Core Application-Layer Services & Mobility (5 Labs)** | **DHCP (D.O.R.A) • DHCP Relay • Authoritative DNS • Stratum 5 NTP • Syslog Telemetry • Cisco WLC** | • End-to-end client lifecycle workflow<br/>• Option 43 / Option 150 provisioning<br/>• SIEM-ready microsecond timestamps | [**`network-services-labs` →**](https://github.com/abdulwahabsaim/network-services-labs) |
+32 documented Cisco labs, plus Cisco ASA firewall labs added lesson by lesson. Each one follows the same path: plan the addressing, build the topology, configure from the CLI, verify with show and debug output, then commit the configs and a runbook.
 
-</div>
+| Repository | Labs | What is inside |
+| :--- | :---: | :--- |
+| [**cisco-enterprise-campus-mega-lab**](https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab) | 1 | 15-device campus, 13 device configs, addressing plan and a 10-slide architecture deck |
+| [**enterprise-routing-labs**](https://github.com/abdulwahabsaim/enterprise-routing-labs) | 13 | OSPF and EIGRP, static and floating static, HSRP, NAT and PAT, QoS, GRE and IPv6 |
+| [**layer2-security-labs**](https://github.com/abdulwahabsaim/layer2-security-labs) | 13 | VLANs and VTP, STP guards, EtherChannel, Port Security, DHCP Snooping, DAI, ACLs and SSHv2 |
+| [**network-services-labs**](https://github.com/abdulwahabsaim/network-services-labs) | 5 | DHCP relay, DNS, NTP with authentication, Syslog and Cisco 3504 WLC wireless |
+| [**cisco-asa-firewall-labs**](https://github.com/abdulwahabsaim/cisco-asa-firewall-labs) | 3 | Cisco ASA in EVE-NG: security levels, ACLs and object groups, NAT, PAT and DMZ publishing. In progress |
 
-<img src="assets/network-divider.svg" width="100%" alt="Network Divider" />
+Every lab has its own page with a redrawn topology on the [portfolio](https://abdulwahabsaim.github.io/labs/).
 
-## 🚀 Complete Hands-On Lab Inventory (32 Production Labs)
+## Credentials
 
-```text
-├── 🏆 cisco-enterprise-campus-mega-lab/
-│   ├── configs/
-│   ├── slides/
-│   ├── docs/
-│   └── CCNA Mega Lab (Jeremy_s IT Lab).pka
-│
-├── 📁 enterprise-routing-labs/
-│   ├── 01-dynamic-routing-eigrp/
-│   ├── 02-dynamic-routing-multi-area-ospf/
-│   ├── 03-multi-router-wan-mesh-ecmp/
-│   ├── 04-multi-hop-static-routing/
-│   ├── 05-hsrp-gateway-redundancy/
-│   ├── 06-intervlan-routing-multilayer-svi/
-│   ├── 07-floating-static-routes-wan-failover/
-│   ├── 08-ospf-neighbor-troubleshooting-lsdb/
-│   ├── 09-ipv6-dual-stack-routing-slaac/
-│   ├── 10-enterprise-edge-nat-pat-overload/
-│   ├── 11-modular-qos-traffic-prioritization/
-│   ├── 12-site-to-site-gre-tunnel-ospf/
-│   └── 13-dynamic-routing-eigrp-variance/
-│
-├── 📁 layer2-security-labs/
-│   ├── 01-access-control-lists-acl/
-│   ├── 02-vlan-trunking-and-vtp/
-│   ├── 03-port-security-mac-limiting/
-│   ├── 04-stp-root-guard/
-│   ├── 05-stp-bpdu-filtering-and-loop-guard/
-│   ├── 06-etherchannel-lacp-pagp-layer3/
-│   ├── 07-cdp-lldp-discovery-and-hardening/
-│   ├── 08-secure-device-management-sshv2/
-│   ├── 09-switchport-voice-vlan-telephony/
-│   ├── 10-dhcp-snooping-and-dynamic-arp-dai/
-│   ├── 11-stp-hsrp-active-root-alignment/
-│   ├── 12-vtp-modes-and-dtp-hardening/
-│   └── 13-enterprise-extended-acls-service-filtering/
-│
-└── 📁 network-services-labs/
-    ├── 01-core-network-services-dhcp-dns-http/
-    ├── 02-centralized-dhcp-relay-ip-helper/
-    ├── 03-ntp-stratum-hierarchy-authentication/
-    ├── 04-centralized-syslog-telemetry/
-    └── 05-enterprise-wlc-centralized-wireless/
-```
+| Credential | Issuer | Date | |
+| :--- | :--- | :--- | :--- |
+| **Cisco Certified Network Associate** (CCNA 200-301) | Cisco | Feb 2026 | [Verify](https://cp.certmetrics.com/cisco/en/public/verify/credential/852d6536dadd4375ac8964bdbd599b94) |
+| **Administer Active Directory Domain Services** | Microsoft Applied Skills | Nov 2026 | [Verify](https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/79c096475bfb39a0) |
+| **Get started with identities and access using Microsoft Entra** | Microsoft Applied Skills | Nov 2026 | [Verify](https://learn.microsoft.com/en-us/users/abdulwahabsaim/credentials/f6ba56b7933690ed) |
+| **Jira Service Management Fundamentals with AI** | Atlassian Credentialed | Nov 2026 | [Verify](https://cp.certmetrics.com/atlassian/en/public/verify/credential/eb1ebbd08f3b4f5797091b9240db1176) |
 
-<img src="assets/network-divider.svg" width="100%" alt="Network Divider" />
+Training at Corvit: Red Hat System Administration (RHCSA) coursework completed. Taking Cisco CCNP and Cisco ASA/FTD firewall classes now.
 
-## 🧰 Technical Skills & Protocol Matrix
+## What I work with
 
-<div align="center">
+| Area | Skills |
+| :--- | :--- |
+| Routing and switching | **Cisco IOS CLI**, **multi-area OSPFv2**, **HSRPv2**, **VLANs and 802.1Q**, STP and Rapid-PVST+, EtherChannel (LACP, PAgP), EIGRP, static and floating static, IPv4 and IPv6 subnetting |
+| Security | **DHCP Snooping**, **Dynamic ARP Inspection**, **Port Security**, standard and extended ACLs, SSHv2 device hardening, NAT and PAT, Cisco ASA (in training) |
+| Services and operations | **DHCP relay**, **Syslog**, NTP, DNS, Cisco 3504 WLC, Jira Service Management, Git and Markdown runbooks |
+| Systems | **Ubuntu Linux (daily)**, **Windows 10/11 imaging**, Active Directory DS, Microsoft Entra ID, Microsoft 365, QEMU/KVM, VMware, VirtualBox |
 
-### 🌐 Routing, Switching & Campus Security
-<p align="center">
-  <img src="https://img.shields.io/badge/-OSPFv2-00599C?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-EIGRP-00599C?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-HSRP_v2-00FF88?style=flat-square&logo=cisco&logoColor=black" height="26"/>
-  <img src="https://img.shields.io/badge/-802.1Q_VLANs-orange?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-Rapid--PVST+-6366F1?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-EtherChannel_PAgP%2FLACP-38BDF8?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-DAI_%26_Snooping-10B981?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-Port_Security-red?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-Cisco_3504_WLC-F59E0B?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-IPv6_Dual--Stack-8B5CF6?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-NAT_%2F_PAT-0284C7?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-Extended_ACLs-00599C?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-DHCP_Relay_%2F_Option_43-1BA0D7?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-  <img src="https://img.shields.io/badge/-NTP_%26_Syslog-14B8A6?style=flat-square&logo=cisco&logoColor=white" height="26"/>
-</p>
+## Background
 
-### 🐧 Systems, Observability & Network Tools
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=ubuntu,debian,linux,git,py" height="42" />
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/-Packet_Tracer_8.2+-00599C?style=flat-square&logo=cisco&logoColor=white" height="24"/>
-  <img src="https://img.shields.io/badge/-TCPDump-black?style=flat-square&logo=linux&logoColor=white" height="24"/>
-  <img src="https://img.shields.io/badge/-Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white" height="24"/>
-  <img src="https://img.shields.io/badge/-MTR_/_Traceroute-2088FF?style=flat-square&logo=gnubash&logoColor=white" height="24"/>
-</p>
+- **IT and systems assistant**, eezyprint (part-time, family business), 2022 - 2024. Looked after the production PCs, printers and scanners of a wholesale print press: LAN printing, drivers, Windows installs.
+- **Personal lab and peer support**, 2022 - now. 50+ clean OS installs, re-images and dual-boots across 20+ machines, hardware upgrades and Wi-Fi bridging.
+- **BS Computer Science (7 of 8 Semesters Completed)**, University of Central Punjab, 2022 - 2026.
 
-### 💻 Computer Science & Software Development
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,express,php,mongodb,postman,vscode" height="42" />
-</p>
+---
 
-</div>
-
-<img src="assets/network-divider.svg" width="100%" alt="Network Divider" />
-
-## 📊 Telemetry & Contribution Activity
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=abdulwahabsaim&theme=tokyonight&hide_border=true" height="165"/>
-
-</div>
-
-<img src="assets/network-divider.svg" width="100%" alt="Network Divider" />
-
-## 📬 Terminal Contact Endpoints
-<div align="center">
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-4C8DFF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://abdulwahabsaim.github.io)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdulwahabsaim/)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abdulwahabsaim58.nl@gmail.com)
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,24,35,45&height=90&section=footer" width="100%"/>
-
-</div>
+Based in Goes, Zeeland and open to relocating within the Netherlands. The quickest way to reach me is [email](mailto:abdulwahabsaim58.nl@gmail.com) or [LinkedIn](https://www.linkedin.com/in/abdulwahabsaim/).
