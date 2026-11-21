@@ -90,6 +90,8 @@ Training at Corvit: Red Hat System Administration (RHCSA) coursework completed. 
 
 ## What I work with
 
+<p align="center"><img src="assets/tools.svg" height="52" alt="Tools: Cisco IOS, Ubuntu, Linux, Windows, Microsoft 365, Entra and AD DS, Jira Service Management, Git, GitHub, Markdown runbooks, QEMU/KVM, VirtualBox"></p>
+
 Orange marks the skills I use most.
 
 **Routing and switching**<br>

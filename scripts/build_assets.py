@@ -246,11 +246,92 @@ def cert_card(theme, slug, image, issuer, lines, code, date):
     return svg(W, H, f"{' '.join(lines)}, {issuer}, {date}. Verify credential.", body, css)
 
 
+# ---------------------------------------------------------------- WAVE HEADER
+def wave_path(W, base, amp, phase, waves=1.5, bottom=400):
+    pts = []
+    for k in range(0, 121):
+        x = W * 2 * k / 120  # twice as wide, so it can drift sideways seamlessly
+        y = base + amp * math.sin(2 * math.pi * waves * x / W + phase)
+        pts.append(f"{x:.1f},{y:.1f}")
+    return f"M0,{bottom} L" + " L".join(pts) + f" L{W * 2},{bottom} Z"
+
+
+def header(theme):
+    """Charcoal banner with an orange glow and a drifting wave edge (inspired by the old capsule header)."""
+    c = THEMES[theme]
+    W, H = 1200, 300
+    css = f"""
+      .name{{font:800 64px {SANS};letter-spacing:-2.2px;fill:#ffffff}}
+      .sub{{font:500 22px {SANS};fill:#d9d9de}} .sub .a{{fill:{ACCENT};font-weight:700}}
+      .meta{{font:400 15px {MONO};fill:#a3a3ad}}
+      .w1{{animation:drift 14s linear infinite}} .w2{{animation:drift 9s linear infinite reverse}}
+      @keyframes drift{{from{{transform:translateX(0)}}to{{transform:translateX(-{W}px)}}}}
+      .hub{{transform-origin:1030px 92px;animation:ping 2.8s ease-out infinite}}
+      @keyframes ping{{from{{transform:scale(1);opacity:.7}}to{{transform:scale(4.5);opacity:0}}}}
+      @media (prefers-reduced-motion:reduce){{.w1,.w2,.hub{{animation:none}}.hub{{opacity:0}}}}
+    """
+    dots = []
+    for x in range(40, W, 24):
+        for y in range(20, 230, 24):
+            d = math.hypot(x - 1030, y - 92)
+            if d < 150:
+                k = (1 - d / 150) ** 2
+                dots.append(f'<circle cx="{x}" cy="{y}" r="{1.2 + k * 1.8:.2f}" fill="{ACCENT}" fill-opacity="{0.15 + k * 0.8:.2f}"/>')
+            else:
+                dots.append(f'<circle cx="{x}" cy="{y}" r="1.1" fill="#ffffff" fill-opacity=".07"/>')
+    spokes = [(930, 40), (1130, 50), (1150, 150), (960, 170), (1080, 190)]
+    net = "".join(f'<line x1="1030" y1="92" x2="{x}" y2="{y}" stroke="{ACCENT}" stroke-opacity=".5" stroke-width="1.3"/>'
+                  f'<circle cx="{x}" cy="{y}" r="4.5" fill="#141416" stroke="{ACCENT}" stroke-width="1.8"/>' for x, y in spokes)
+    defs = (f'<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141416"/>'
+            f'<stop offset=".6" stop-color="#1b1613"/><stop offset="1" stop-color="#3a1a0a"/></linearGradient>'
+            f'<radialGradient id="glow" cx="1030" cy="92" r="420" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{ACCENT}" stop-opacity=".35"/>'
+            f'<stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></radialGradient>'
+            f'<clipPath id="card"><path d="M22 0 H{W - 22} A22 22 0 0 1 {W} 22 V{H} H0 V22 A22 22 0 0 1 22 0 Z"/></clipPath></defs>')
+    body = (defs + '<g clip-path="url(#card)">'
+            f'<rect width="{W}" height="{H}" fill="url(#bg)"/><rect width="{W}" height="{H}" fill="url(#glow)"/>'
+            + "".join(dots) + net
+            + f'<circle cx="1030" cy="92" r="9" fill="{ACCENT}"/><circle cx="1030" cy="92" r="9" fill="none" stroke="{ACCENT}" stroke-width="1.6" class="hub"/>'
+            f'<path class="w1" d="{wave_path(W, 238, 14, 0.6)}" fill="{ACCENT}" fill-opacity=".55"/>'
+            f'<path class="w2" d="{wave_path(W, 252, 12, 2.2, 1)}" fill="{c["bg"]}"/>'
+            f'<g transform="translate(70 66)"><rect width="46" height="46" rx="12" fill="{ACCENT}"/>'
+            f'<path d="M11.5 13.5 H34.5 V28 H28.5 V34 H17.5 V28 H11.5 Z" fill="#111113"/></g>'
+            f'<text x="134" y="108" class="name">Abdul Wahab Saim</text>'
+            f'<text x="72" y="160" class="sub">Junior network engineer, <tspan class="a">ready to join your team.</tspan></text>'
+            f'<text x="72" y="196" class="meta"><tspan fill="{ACCENT}">CCNA 200-301</tspan><tspan dx="26">Goes, Netherlands</tspan><tspan dx="26">Full-time, available now</tspan></text>'
+            '</g>')
+    return svg(W, H, "Abdul Wahab Saim, junior network engineer, ready to join your team. CCNA 200-301, Goes, Netherlands, full-time, available now.", body, css)
+
+
+# ---------------------------------------------------------------- LOGO TILES
+ICON_DIR = Path(__file__).resolve().parent / "icons"
+TILES = [  # (simple-icons slug, label, brand colour)
+    ("cisco", "Cisco IOS", "#1BA0D7"), ("ubuntu", "Ubuntu", "#E95420"), ("linux", "Linux", "#FCC624"),
+    ("windows", "Windows", "#0078D4"), ("microsoft", "Microsoft 365, Entra, AD DS", "#F25022"),
+    ("jira", "Jira Service Management", "#2684FF"), ("git", "Git", "#F05032"), ("github", "GitHub", "#FFFFFF"),
+    ("markdown", "Markdown runbooks", "#FFFFFF"), ("qemu", "QEMU/KVM", "#FF6600"),
+    ("virtualbox", "VirtualBox", "#2F61B4"),
+]
+
+
+def tiles():
+    S, G = 56, 14
+    W = len(TILES) * (S + G) - G
+    out = []
+    for i, (slug, label, color) in enumerate(TILES):
+        x = i * (S + G)
+        body = (ICON_DIR / f"{slug}.svgpath").read_text().replace('fill="currentColor"', f'fill="{color}"')
+        out.append(f'<g><title>{escape(label)}</title><rect x="{x}" width="{S}" height="{S}" rx="13" fill="#242938"/>'
+                   f'<g transform="translate({x + 14} 14) scale({28 / 24})">{body}</g></g>')
+    return svg(W, S, "Tools: " + ", ".join(t[1] for t in TILES), "".join(out), "")
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "terminal.svg").write_text(terminal())
     (OUT / "footer.svg").write_text(footer())
+    (OUT / "tools.svg").write_text(tiles())
     for theme in THEMES:
+        (OUT / f"header-{theme}.svg").write_text(header(theme))
         (OUT / f"divider-{theme}.svg").write_text(divider(theme))
         for slug, *rest in CERTS:
             (OUT / f"cert-{slug}-{theme}.svg").write_text(cert_card(theme, slug, *rest))
