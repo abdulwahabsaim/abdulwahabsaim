@@ -18,13 +18,6 @@ I build enterprise topologies in Packet Tracer, GNS3 and EVE-NG, configure every
 
 ## Flagship: enterprise campus network
 
-<a href="https://github.com/abdulwahabsaim/cisco-enterprise-campus-mega-lab">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/campus-topology-dark.svg">
-    <img src="assets/campus-topology-light.svg" width="100%" alt="Topology of the 15-device enterprise campus: R1 with two ISP links, two core switches, two office blocks with distribution and access switches, WLC, access points, IP phones, PCs and a server">
-  </picture>
-</a>
-
 Two office blocks, a routed Layer 3 core and a dual-ISP edge across 15 Cisco devices.
 
 - HSRPv2 active gateways aligned with Rapid-PVST+ root bridges
